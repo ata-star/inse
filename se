@@ -30,4 +30,6 @@ passwd $user
 
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
 
+reflector --verbose --latest 16 --sort rate --save /etc/pacman.d/mirrorlist
+
 exit
