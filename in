@@ -1,11 +1,7 @@
 #!/bin/bash
-layout="de"
+loadkeys de
 boot="/dev/sdb1"
 root="/dev/sdb2"
-
-loadkeys de
-
-
 
 mkfs.fat $boot
 mkfs.f2fs -f $root
@@ -16,5 +12,4 @@ pacstrap /mnt base linux linux-firmware nano sudo grub reflector
 genfstab -U /mnt >> /mnt/etc/fstab
 
 cp se /mnt/
-
 arch-chroot /mnt
